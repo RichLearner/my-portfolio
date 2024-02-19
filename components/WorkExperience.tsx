@@ -24,7 +24,11 @@ export default function WorkExperience({ experiences }: Props) {
         ))} */}
         {experiences
           .slice() // Create a shallow copy of the array to avoid mutating the original
-          .sort((a, b) => new Date(b.dateStarted) - new Date(a.dateStarted)) // Sort the array based on the dateStarted property
+          .sort(
+            (a, b) =>
+              new Date(b.dateStarted).getTime() -
+              new Date(a.dateStarted).getTime()
+          ) // Sort the array based on the dateStarted property
           .map((experience) => (
             <ExperienceCard key={experience._id} experience={experience} />
           ))}
