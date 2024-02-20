@@ -17,7 +17,7 @@ import Projects from "../components/Projects";
 import ContactMe from "../components/ContactMe";
 import Link from "next/link";
 import { HomeIcon } from "@heroicons/react/24/solid";
-import Script from "next/script";
+import { sanityClient } from "../sanity";
 
 type Props = {
   pageInfo: PageInfo;
@@ -123,11 +123,36 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo = await fetchPageInfo();
-  const experiences = await fetchExperiences();
-  const skills = await fetchSkills();
-  const projects = await fetchProjects();
-  const socials = await fetchSocials();
+  const pageInfoQuery = "*[_type == 'pageInfo'][0]";
+  const pageInfo = await sanityClient.fetch(pageInfoQuery);
+
+  const experienceQuery = `
+  *[_type == 'experience'] {
+    ...,
+    technologies[]->
+  }
+`;
+  const experiences = await sanityClient.fetch(experienceQuery);
+
+  const skillsQuery = "*[_type == 'skill']";
+  const skills = await sanityClient.fetch(skillsQuery);
+
+  const projectsQuery = `
+  *[_type == 'project'] {
+    ...,
+    technologies[]->
+  }
+`;
+  const projects = await sanityClient.fetch(projectsQuery);
+
+  const socialsQuery = "*[_type == 'social']";
+  const socials = await sanityClient.fetch(socialsQuery);
+
+  // const pageInfo = await fetchPageInfo();
+  // const experiences = await fetchExperiences();
+  // const skills = await fetchSkills();
+  // const projects = await fetchProjects();
+  // const socials = await fetchSocials();
 
   return {
     props: {
