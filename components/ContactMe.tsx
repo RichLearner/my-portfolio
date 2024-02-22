@@ -5,14 +5,13 @@ import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { Social } from "../typings";
 
-type Props = {};
+type Props = { socials: Social[] };
 
 type Inputs = {
   name: string;
   email: string;
   subject: string;
   message: string;
-  socials: Social[];
 };
 
 export default function ContactMe({ socials }: Props) {
