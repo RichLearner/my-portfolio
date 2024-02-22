@@ -30,7 +30,7 @@ export default function Hero({ pageInfo }: Props) {
       />
 
       <div className="z-20">
-        <h2 className="text-2xl uppercase text-lime-600 pb-2 tracking-[10px] md:tracking-[15px]">
+        <h2 className="text-2xl uppercase text-green-600 pb-2 tracking-[10px] md:tracking-[15px]">
           {pageInfo?.role}
         </h2>
         <h1 className="text-2xl md:text-5xl lg:text-6xl font-semibold px-10">

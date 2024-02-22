@@ -69,7 +69,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       </Script> */}
 
       {/* Header */}
-      <Header socials={socials} />
+      <Header />
 
       {/* Hero */}
       <section id="hero" className="snap-start relative">
@@ -103,11 +103,11 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
       {/* Contact */}
       <section id="contact" className="snap-start relative">
-        <ContactMe />
+        <ContactMe socials={socials} />
         <div className="gradient-02 z-0" />
       </section>
 
-      <Link href="#hero">
+      {/* <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer z-10">
           <div className="flex items-center justify-center">
             <div className="h-10 w-10 bg-lime-700 rounded-full flex items-center justify-center">
@@ -115,7 +115,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
             </div>
           </div>
         </footer>
-      </Link>
+      </Link> */}
     </div>
   );
 };

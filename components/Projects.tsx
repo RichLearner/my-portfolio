@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import React from "react";
 import { urlFor } from "../sanity";
 import { Project } from "../typings";
-import Link from "next/link";
 
 type Props = { projects: Project[] };
 
@@ -12,13 +11,20 @@ export default function Projects({ projects }: Props) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className=" h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-10"
+      className=" h-screen relative flex overflow-hidden flex-col text-left max-w-full justify-evenly mx-auto items-center z-10"
     >
       <h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-green-600 text-xl md:text-2xl">
         Projects
       </h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80">
+      <h4 className="absolute top-64 md:top-40 tracking-[4px] text-green-600 text-md md:text-lg z-10 text-center">
+        Swipe or use the scrollbar below
+      </h4>
+      <h4 className="absolute top-72 md:top-48 tracking-[4px] text-green-600 text-md md:text-lg z-10 text-center">
+        for more projects
+      </h4>
+
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-green-400/20 scrollbar-thumb-[#698C5A]/80">
         {projects?.map((project, i) => (
           <div
             key={project._id}
@@ -62,7 +68,7 @@ export default function Projects({ projects }: Props) {
                 href={project?.linkToBuild}
                 target="_blank"
                 rel="noreferrer"
-                className="flex justify-center items-center mx-auto w-40 h-10 bg-green-700 text-white font-bold rounded-full "
+                className="flex justify-center items-center mx-auto w-40 h-10 bg-green-700 text-white font-bold rounded-full hover:bg-green-500 "
               >
                 Project Page
               </a>
