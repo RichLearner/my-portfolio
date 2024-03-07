@@ -17,12 +17,12 @@ export default function Projects({ projects }: Props) {
         Projects
       </h3>
 
-      <h4 className="absolute top-64 md:top-40 tracking-[4px] text-green-600 text-md md:text-lg z-10 text-center">
+      {/* <h4 className="absolute top-64 md:top-40 tracking-[4px] text-green-600 text-md md:text-lg z-10 text-center">
         Swipe or use the scrollbar below
       </h4>
       <h4 className="absolute top-72 md:top-48 tracking-[4px] text-green-600 text-md md:text-lg z-10 text-center">
         for more projects
-      </h4>
+      </h4> */}
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-green-400/20 scrollbar-thumb-[#698C5A]/80">
         {projects?.map((project, i) => (

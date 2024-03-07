@@ -25,7 +25,7 @@ export default function ContactMe({ socials }: Props) {
       <h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-green-600 text-xl md:text-2xl">
         Contact
       </h3>
-      <div className="flex flex-col space-y-4 md:space-y-5 lg:space-y-6 xl:space-y-6 2xl:space-y-10">
+      <div className="flex flex-col space-y-2 md:space-y-5 lg:space-y-6 xl:space-y-6 2xl:space-y-10">
         <h4 className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center">
           I have got just what you need.{" "}
           <span className="decoration-darkGreen/50 underline text-green-800">

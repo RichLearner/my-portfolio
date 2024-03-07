@@ -26,13 +26,13 @@ export default function Header({}: Props) {
       >
         <Link
           href="/"
-          className="text-green-700 text-md hover:text-green-500 hover:font-bold"
+          className="text-green-700 text-md hover:text-green-500 font-semibold hover:font-bold"
         >
           HOME
         </Link>
         <Link
           href="/projects"
-          className="text-green-700 text-md hover:text-green-500 hover:font-bold"
+          className="text-green-700 text-md hover:text-green-500 font-semibold hover:font-bold"
         >
           PROJECTS
         </Link>
